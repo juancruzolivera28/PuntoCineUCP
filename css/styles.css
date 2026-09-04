@@ -251,7 +251,10 @@ img, svg { display: block; max-width: 100%; }
 
 .func-times { margin: 0 0 8px; }
 
-/* -------------------- Poster block (CSS, sin imágenes) -------------------- */
+/* -------------------- Poster block --------------------
+   Sin --poster-image: color plano por género (fallback).
+   Con --poster-image: url('...') en el style inline, se
+   muestra esa imagen real en su lugar. */
 
 .poster {
   aspect-ratio: 2 / 3;
@@ -260,7 +263,10 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: flex-end;
   padding: 18px;
-  background: var(--genre-color, var(--curtain));
+  background-color: var(--genre-color, var(--curtain));
+  background-image: var(--poster-image, none);
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
