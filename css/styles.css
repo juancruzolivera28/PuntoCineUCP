@@ -243,6 +243,14 @@ img, svg { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 
+.section__head p { margin: 0; }
+
+.section__head--offset { margin-top: 40px; }
+
+.section-subtitle { font-size: 1.1rem; margin: 32px 0 8px; }
+
+.func-times { margin: 0 0 8px; }
+
 /* -------------------- Poster block (CSS, sin imágenes) -------------------- */
 
 .poster {
@@ -619,6 +627,18 @@ a:focus-visible,
 .badge-cine--tipas { color: var(--zone-tipas); border-color: var(--zone-tipas); }
 .badge-cine--imax { color: var(--zone-imax); border-color: var(--zone-imax); }
 .badge-cine--sunstar { color: var(--zone-sunstar); border-color: var(--zone-sunstar); }
+
+.venue-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.venue-card__title { font-size: 1.3rem; margin-top: 10px; }
+
+.venue-card--tipas { border-top: 3px solid var(--zone-tipas); }
+.venue-card--imax { border-top: 3px solid var(--zone-imax); }
+.venue-card--sunstar { border-top: 3px solid var(--zone-sunstar); }
 
 td.cine--tipas { color: var(--zone-tipas); font-weight: 600; }
 td.cine--imax { color: var(--zone-imax); font-weight: 600; }
