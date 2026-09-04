@@ -1,11 +1,9 @@
 # Pósters reales
 
-Esta carpeta es donde van las imágenes reales de cada película. Todavía no hay
-ninguna imagen acá — cuando tengas el archivo, guardalo con el nombre exacto
-de esta tabla (en minúsculas, con guiones, sin acentos) para que reemplace el
-póster de color generado por CSS:
+Las 6 imágenes ya están cargadas acá con el nombre exacto que cada póster del
+sitio espera:
 
-| Película          | Archivo esperado                     |
+| Película          | Archivo                              |
 |--------------------|--------------------------------------|
 | El Último Vagón    | `img/posters/el-ultimo-vagon.jpg`    |
 | La Casa del Fondo  | `img/posters/la-casa-del-fondo.jpg`  |
@@ -14,18 +12,12 @@ póster de color generado por CSS:
 | Spiderman          | `img/posters/spiderman.jpg`          |
 | La Odisea          | `img/posters/la-odisea.jpg`          |
 
-## Cómo activar la imagen
+## Cómo reemplazar una imagen
 
-No hace falta tocar ningún archivo HTML ni CSS: cada `<div class="poster">`
-del sitio ya apunta a la ruta de esta tabla. Vos solo tenés que guardar (o
-pegar) la imagen en esta carpeta con el nombre exacto que le corresponde —
-en cuanto el archivo exista ahí, va a aparecer automáticamente reemplazando
-el color plano.
+No hace falta tocar HTML ni CSS: cada `<div class="poster">` del sitio ya
+apunta a la ruta de esta tabla. Para cambiar una imagen, simplemente
+reemplazá el archivo correspondiente por otro con el mismo nombre.
 
-Si más adelante querés usar otro nombre de archivo o guardarla en otro lado,
-buscá el comentario `<!-- Para poner imagen real: ... -->` arriba del póster
-correspondiente y cambiá la ruta dentro de `--poster-image: url('...');` en
-ese mismo `<div>`.
-
-Mientras el archivo no exista, el póster sigue mostrando el color plano del
-género con el título superpuesto — no rompe nada.
+Si en algún momento borrás o renombrás alguno de estos archivos, ese póster
+vuelve a mostrar el color plano del género con el título superpuesto — no
+rompe nada.
