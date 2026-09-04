@@ -252,9 +252,10 @@ img, svg { display: block; max-width: 100%; }
 .func-times { margin: 0 0 8px; }
 
 /* -------------------- Poster block --------------------
-   Sin --poster-image: color plano por género (fallback).
-   Con --poster-image: url('...') en el style inline, se
-   muestra esa imagen real en su lugar. */
+   background-color: color plano por género (fallback).
+   Si el div trae además background-image inline (una imagen
+   real), esa imagen se muestra encima; si no carga (o no está
+   definida), se ve el color de fondo. */
 
 .poster {
   aspect-ratio: 2 / 3;
@@ -264,7 +265,6 @@ img, svg { display: block; max-width: 100%; }
   align-items: flex-end;
   padding: 18px;
   background-color: var(--genre-color, var(--curtain));
-  background-image: var(--poster-image, none);
   background-size: cover;
   background-position: center;
   overflow: hidden;
