@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuntoCine — Elegir butacas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="listado_tabla.html">Cartelera (tabla)</a></li>
+        <li><a href="listado_box.html">Cartelera (box)</a></li>
+        <li>
+          <details class="nav__dropdown">
+            <summary>Cines</summary>
+            <ul class="nav__dropdown__menu">
+              <li><a href="cines/las-tipas.html">Las Tipas</a></li>
+              <li><a href="cines/imax.html">IMAX</a></li>
+              <li><a href="cines/sunstar.html">Sunstar</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="butacas.html" aria-current="page">Butacas</a></li>
+        <li><a href="comprar.html">Comprar entradas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section container">
+    <div class="section__head">
+      <h2>Elegí tus butacas</h2>
+      <p class="muted" style="margin:0;">El Último Vagón · Las Tipas · Sala 1 · Hoy 21:00</p>
+    </div>
+
+    <div class="screen"></div>
+    <p class="screen__label">Pantalla</p>
+
+    <div class="seat-map" id="seatMap" role="group" aria-label="Mapa de butacas de la sala">
+      <div class="seat-row">
+        <span class="seat-row__label">A</span>
+        <button type="button" class="seat" data-seat="A1" aria-label="Butaca A1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A2" aria-label="Butaca A2, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A3" aria-label="Butaca A3, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A4" aria-label="Butaca A4, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A5" aria-label="Butaca A5, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A6" aria-label="Butaca A6, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A7" aria-label="Butaca A7, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A8" aria-label="Butaca A8, disponible" aria-pressed="false"></button>
+      </div>
+      <div class="seat-row">
+        <span class="seat-row__label">B</span>
+        <button type="button" class="seat" data-seat="B1" aria-label="Butaca B1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat seat--occupied" data-seat="B2" aria-label="Butaca B2, ocupada" disabled></button>
+        <button type="button" class="seat" data-seat="B3" aria-label="Butaca B3, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B4" aria-label="Butaca B4, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B5" aria-label="Butaca B5, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B6" aria-label="Butaca B6, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B7" aria-label="Butaca B7, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B8" aria-label="Butaca B8, disponible" aria-pressed="false"></button>
+      </div>
+      <div class="seat-row">
+        <span class="seat-row__label">C</span>
+        <button type="button" class="seat" data-seat="C1" aria-label="Butaca C1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="C2" aria-label="Butaca C2, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat seat--occupied" data-seat="C3" aria-label="Butaca C3, ocupada" disabled></button>
+        <button type="button" class="seat seat--occupied" data-seat="C4" aria-label="Butaca C4, ocupada" disabled></button>
+        <button type="button" class="seat seat--occupied" data-seat="C5" aria-label="Butaca C5, ocupada" disabled></button>
+        <button type="button" class="seat" data-seat="C6" aria-label="Butaca C6, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="C7" aria-label="Butaca C7, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="C8" aria-label="Butaca C8, disponible" aria-pressed="false"></button>
+      </div>
+      <div class="seat-row">
+        <span class="seat-row__label">D</span>
+        <button type="button" class="seat" data-seat="D1" aria-label="Butaca D1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D2" aria-label="Butaca D2, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D3" aria-label="Butaca D3, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D4" aria-label="Butaca D4, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D5" aria-label="Butaca D5, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat seat--occupied" data-seat="D6" aria-label="Butaca D6, ocupada" disabled></button>
+        <button type="button" class="seat" data-seat="D7" aria-label="Butaca D7, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D8" aria-label="Butaca D8, disponible" aria-pressed="false"></button>
+      </div>
+      <div class="seat-row">
+        <span class="seat-row__label">E</span>
+        <button type="button" class="seat" data-seat="E1" aria-label="Butaca E1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E2" aria-label="Butaca E2, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E3" aria-label="Butaca E3, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E4" aria-label="Butaca E4, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E5" aria-label="Butaca E5, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E6" aria-label="Butaca E6, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat seat--occupied" data-seat="E7" aria-label="Butaca E7, ocupada" disabled></button>
+        <button type="button" class="seat" data-seat="E8" aria-label="Butaca E8, disponible" aria-pressed="false"></button>
+      </div>
+      <div class="seat-row">
+        <span class="seat-row__label">F</span>
+        <button type="button" class="seat" data-seat="F1" aria-label="Butaca F1, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F2" aria-label="Butaca F2, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F3" aria-label="Butaca F3, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F4" aria-label="Butaca F4, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F5" aria-label="Butaca F5, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F6" aria-label="Butaca F6, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F7" aria-label="Butaca F7, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F8" aria-label="Butaca F8, disponible" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <div class="seat-legend">
+      <span class="seat-legend__item"><span class="seat-legend__swatch"></span>Disponible</span>
+      <span class="seat-legend__item"><span class="seat-legend__swatch seat-legend__swatch--selected"></span>Seleccionada</span>
+      <span class="seat-legend__item"><span class="seat-legend__swatch seat-legend__swatch--occupied"></span>Ocupada</span>
+    </div>
+  </section>
+
+  <div class="seat-summary">
+    <div class="container">
+      <span class="seat-summary__count">Butacas seleccionadas: <strong id="seatCount">0</strong></span>
+      <span class="seat-summary__total">Total: <span id="seatTotal">$0</span></span>
+      <a href="comprar.html" class="btn btn--primary" id="continueBtn" aria-disabled="true">Continuar a la compra</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
+    </div>
+  </footer>
+
+  <script src="js/butacas.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuntoCine — Sunstar</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="theme-sunstar">
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav__logo">Punto<span>Cine</span></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../listado_tabla.html">Cartelera (tabla)</a></li>
+        <li><a href="../listado_box.html">Cartelera (box)</a></li>
+        <li>
+          <details class="nav__dropdown">
+            <summary>Cines</summary>
+            <ul class="nav__dropdown__menu">
+              <li><a href="las-tipas.html">Las Tipas</a></li>
+              <li><a href="imax.html">IMAX</a></li>
+              <li><a href="sunstar.html" aria-current="page">Sunstar</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="../butacas.html">Butacas</a></li>
+        <li><a href="../comprar.html">Comprar entradas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Zona Centro · Costanera · Posadas</p>
+      <h1>Cine Sunstar</h1>
+      <p>El cine de PuntoCine en pleno centro de Posadas, sobre Av. Bolívar, junto al Posadas Plaza Shopping. Dos salas, precios accesibles y funciones para toda la familia.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <span class="badge-cine badge-cine--sunstar">Zona Centro</span>
+    <dl class="dl-grid">
+      <dt>Dirección</dt>
+      <dd>Av. Bolívar, junto al Posadas Plaza Shopping, Posadas, Misiones</dd>
+      <dt>Salas</dt>
+      <dd>2 salas (Sala 1 y Sala 2)</dd>
+      <dt>Horario de boletería</dt>
+      <dd>Todos los días de 13:00 a 23:30</dd>
+    </dl>
+
+    <h3 style="font-size:1.1rem; margin:32px 0 8px;">Cómo llegar</h3>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=Posadas+Plaza+Shopping,+Posadas,+Misiones&output=embed"
+        width="100%" height="320" style="border:0; border-radius:4px;"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="section__head" style="margin-top:40px;">
+      <h2>Cartelera en Sunstar</h2>
+      <p class="muted" style="margin:0;">2 películas en cartel</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="poster" style="--genre-color: var(--genre-comedia);">
+          <span class="poster__title">Risas en el Ático</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Risas en el Ático</h3>
+          <div class="card__meta">
+            <span class="tag">Comedia</span>
+            <span class="tag">ATP</span>
+            <span class="tag">95 min</span>
+            <span class="tag">Sala 1</span>
+          </div>
+          <p class="muted">Dos hermanos heredan una casa embrujada por las malas decisiones de su familia.</p>
+          <p class="muted" style="margin:0 0 8px;">Funciones: 14:00 · 17:15 · 20:30</p>
+          <span class="card__price">$3.800</span>
+          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="--genre-color: var(--genre-animacion);">
+          <span class="poster__title">Bosque Encantado</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Bosque Encantado</h3>
+          <div class="card__meta">
+            <span class="tag">Animación</span>
+            <span class="tag">ATP</span>
+            <span class="tag">88 min</span>
+            <span class="tag">Sala 2</span>
+          </div>
+          <p class="muted">Un zorro joven debe salvar el bosque mágico de un invierno que no quiere terminar.</p>
+          <p class="muted" style="margin:0 0 8px;">Funciones: 13:00 · 16:00 · 18:00</p>
+          <span class="card__price">$3.600</span>
+          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
+    </div>
+  </footer>
+
+</body>
+</html>

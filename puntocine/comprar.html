@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuntoCine — Comprar entradas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="listado_tabla.html">Cartelera (tabla)</a></li>
+        <li><a href="listado_box.html">Cartelera (box)</a></li>
+        <li><a href="comprar.html" aria-current="page">Comprar entradas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section container">
+    <h2>Completá tus datos</h2>
+    <p class="muted" style="margin-bottom:32px;">Elegí las funciones que querés reservar y dejanos tus datos para confirmar la compra.</p>
+
+    <form class="form" action="#" method="post">
+
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Marina Gómez" required>
+      </div>
+
+      <div class="field">
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej: 376 4123456" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="nombre@correo.com" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Medio de pago</label>
+        <div class="payment-options">
+          <label><input type="radio" name="pago" value="tarjeta_credito" checked> Tarjeta de crédito</label>
+          <label><input type="radio" name="pago" value="tarjeta_debito"> Tarjeta de débito</label>
+          <label><input type="radio" name="pago" value="mercado_pago"> Mercado Pago</label>
+          <label><input type="radio" name="pago" value="efectivo"> Efectivo en boletería</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Funciones a comprar</label>
+        <div class="product-list">
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="ultimo_vagon">
+            <span>El Último Vagón — 21:00</span>
+            <span class="price">$4.200</span>
+          </label>
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="risas_atico">
+            <span>Risas en el Ático — 17:15</span>
+            <span class="price">$3.800</span>
+          </label>
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="casa_fondo">
+            <span>La Casa del Fondo — 22:15</span>
+            <span class="price">$4.200</span>
+          </label>
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="andromeda">
+            <span>Rumbo a Andrómeda — 19:30</span>
+            <span class="price">$4.500</span>
+          </label>
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="colores_otono">
+            <span>Colores de Otoño — 18:30</span>
+            <span class="price">$3.900</span>
+          </label>
+          <label class="product-list__row">
+            <input type="checkbox" name="producto" value="bosque_encantado">
+            <span>Bosque Encantado — 16:00</span>
+            <span class="price">$3.600</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="cantidad">Cantidad de entradas por función</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" value="1" style="max-width:120px;">
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full">Confirmar compra</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 PuntoCine — todos los derechos reservados.</span>
+      <span>Av. Siempre Viva 742, Posadas · contacto@puntocine.com</span>
+    </div>
+  </footer>
+
+</body>
+</html>

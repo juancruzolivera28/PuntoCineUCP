@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuntoCine — Las Tipas</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="theme-tipas">
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav__logo">Punto<span>Cine</span></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../listado_tabla.html">Cartelera (tabla)</a></li>
+        <li><a href="../listado_box.html">Cartelera (box)</a></li>
+        <li>
+          <details class="nav__dropdown">
+            <summary>Cines</summary>
+            <ul class="nav__dropdown__menu">
+              <li><a href="las-tipas.html" aria-current="page">Las Tipas</a></li>
+              <li><a href="imax.html">IMAX</a></li>
+              <li><a href="sunstar.html">Sunstar</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="../butacas.html">Butacas</a></li>
+        <li><a href="../comprar.html">Comprar entradas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Zona Sur · Posadas</p>
+      <h1>Cine Las Tipas</h1>
+      <p>El cine insignia de PuntoCine, en la zona sur de Posadas, sobre Av. Santa Cruz, junto al Hipermercado Libertad. Dos salas, butacas de siempre y la cartelera más clásica de la ciudad.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <span class="badge-cine badge-cine--tipas">Zona Sur</span>
+    <dl class="dl-grid">
+      <dt>Dirección</dt>
+      <dd>Av. Santa Cruz, cerca de Hipermercado Libertad, Posadas, Misiones</dd>
+      <dt>Salas</dt>
+      <dd>2 salas (Sala 1 y Sala 2)</dd>
+      <dt>Horario de boletería</dt>
+      <dd>Todos los días de 13:00 a 23:30</dd>
+    </dl>
+
+    <h3 style="font-size:1.1rem; margin:32px 0 8px;">Cómo llegar</h3>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=Hipermercado+Libertad,+Posadas,+Misiones&output=embed"
+        width="100%" height="320" style="border:0; border-radius:4px;"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="section__head" style="margin-top:40px;">
+      <h2>Cartelera en Las Tipas</h2>
+      <p class="muted" style="margin:0;">2 películas en cartel</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="poster" style="--genre-color: var(--genre-accion);">
+          <span class="poster__title">El Último Vagón</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">El Último Vagón</h3>
+          <div class="card__meta">
+            <span class="tag">Acción</span>
+            <span class="tag">+13</span>
+            <span class="tag">118 min</span>
+            <span class="tag">Sala 1</span>
+          </div>
+          <p class="muted">Un maquinista debe detener un tren fantasma antes de que amanezca.</p>
+          <p class="muted" style="margin:0 0 8px;">Funciones: 15:30 · 18:00 · 21:00</p>
+          <span class="card__price">$4.200</span>
+          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster" style="--genre-color: var(--genre-drama);">
+          <span class="poster__title">Colores de Otoño</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Colores de Otoño</h3>
+          <div class="card__meta">
+            <span class="tag">Drama</span>
+            <span class="tag">+13</span>
+            <span class="tag">110 min</span>
+            <span class="tag">Sala 2</span>
+          </div>
+          <p class="muted">Una pintora vuelve a su pueblo natal para enfrentar el legado de su padre.</p>
+          <p class="muted" style="margin:0 0 8px;">Funciones: 15:00 · 18:30</p>
+          <span class="card__price">$3.900</span>
+          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
+    </div>
+  </footer>
+
+</body>
+</html>
