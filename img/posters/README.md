@@ -16,19 +16,16 @@ póster de color generado por CSS:
 
 ## Cómo activar la imagen
 
-Cada `<div class="poster">` tiene un comentario arriba con la ruta exacta que
-le corresponde. Una vez que copies la imagen a esta carpeta con el nombre
-indicado, agregá `--poster-image: url('...');` al `style` inline de ese
-`<div class="poster">`, junto al `--genre-color` que ya tiene. Por ejemplo,
-en `index.html`:
+No hace falta tocar ningún archivo HTML ni CSS: cada `<div class="poster">`
+del sitio ya apunta a la ruta de esta tabla. Vos solo tenés que guardar (o
+pegar) la imagen en esta carpeta con el nombre exacto que le corresponde —
+en cuanto el archivo exista ahí, va a aparecer automáticamente reemplazando
+el color plano.
 
-```html
-<!-- Para poner imagen real: img/posters/el-ultimo-vagon.jpg -->
-<div class="poster" style="--genre-color: var(--genre-accion); --poster-image: url('img/posters/el-ultimo-vagon.jpg');">
-```
+Si más adelante querés usar otro nombre de archivo o guardarla en otro lado,
+buscá el comentario `<!-- Para poner imagen real: ... -->` arriba del póster
+correspondiente y cambiá la ruta dentro de `--poster-image: url('...');` en
+ese mismo `<div>`.
 
-(en las páginas dentro de `cines/` y en `producto.html`, la ruta relativa es
-`../img/posters/...` en vez de `img/posters/...`).
-
-Si no se define `--poster-image`, el póster sigue mostrando el color plano
-del género con el título superpuesto, como hasta ahora.
+Mientras el archivo no exista, el póster sigue mostrando el color plano del
+género con el título superpuesto — no rompe nada.
