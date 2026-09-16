@@ -1,7 +1,3 @@
-/* =========================================================
-   PuntoCine — hoja de estilos compartida
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 :root {
@@ -34,11 +30,6 @@
   --radius: 4px;
   --maxw: 1120px;
 }
-
-/* -------------------- Temas por cine/zona --------------------
-   Cada página de cine agrega una de estas clases al <body>.
-   Redefinen --gold/--gold-dim/--on-accent, que ya alimentan
-   botones, precios, encabezados de tabla y el nav activo. */
 
 body.theme-tipas {
   --gold: var(--zone-tipas);
@@ -99,7 +90,6 @@ img, svg { display: block; max-width: 100%; }
   padding: 0 24px;
 }
 
-/* -------------------- Nav -------------------- */
 
 .site-header {
   position: sticky;
@@ -151,7 +141,6 @@ img, svg { display: block; max-width: 100%; }
   border-bottom-color: var(--gold);
 }
 
-/* -------------------- Hero -------------------- */
 
 .hero {
   position: relative;
@@ -199,7 +188,6 @@ img, svg { display: block; max-width: 100%; }
   font-size: 1.1rem;
 }
 
-/* -------------------- Buttons -------------------- */
 
 .btn {
   display: inline-block;
@@ -228,7 +216,6 @@ img, svg { display: block; max-width: 100%; }
 
 .btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
 
-/* -------------------- Sections -------------------- */
 
 .section {
   padding: 64px 24px;
@@ -251,11 +238,6 @@ img, svg { display: block; max-width: 100%; }
 
 .func-times { margin: 0 0 8px; }
 
-/* -------------------- Poster block --------------------
-   background-color: color plano por género (fallback).
-   Si el div trae además background-image inline (una imagen
-   real), esa imagen se muestra encima; si no carga (o no está
-   definida), se ve el color de fondo. */
 
 .poster {
   aspect-ratio: 2 / 3;
@@ -281,12 +263,16 @@ img, svg { display: block; max-width: 100%; }
 
 .poster--lg .poster__title { font-size: 2.1rem; }
 
-/* -------------------- Cards (listado box) -------------------- */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 24px;
+}
+
+/* auto-fit (no auto-fill): con pocos items, las columnas ocupan todo el ancho en vez de dejar huecos vacíos */
+.grid--fit {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .card {
@@ -327,7 +313,6 @@ img, svg { display: block; max-width: 100%; }
   font-size: 1.05rem;
 }
 
-/* -------------------- Tag / pill -------------------- */
 
 .tag {
   display: inline-block;
@@ -352,7 +337,6 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text);
 }
 
-/* -------------------- Table (listado tabla) -------------------- */
 
 .table-wrap {
   overflow-x: auto;
@@ -390,7 +374,6 @@ tbody tr:last-child td { border-bottom: none; }
 
 td.price { color: var(--gold); font-weight: 600; white-space: nowrap; }
 
-/* -------------------- Ficha de producto -------------------- */
 
 .product {
   display: grid;
@@ -423,7 +406,6 @@ td.price { color: var(--gold); font-weight: 600; white-space: nowrap; }
   margin: 20px 0 28px;
 }
 
-/* -------------------- Formulario -------------------- */
 
 .form {
   max-width: 620px;
@@ -517,7 +499,6 @@ a:focus-visible,
   color: var(--gold);
 }
 
-/* -------------------- Nav dropdown (cines) -------------------- */
 
 .nav__dropdown {
   position: relative;
@@ -584,7 +565,6 @@ a:focus-visible,
   outline-offset: 2px;
 }
 
-/* -------------------- Imagen de Posadas -------------------- */
 
 .map-frame {
   background: var(--surface) url('../img/SUNSTAR.png') center / cover no-repeat;
@@ -593,7 +573,6 @@ a:focus-visible,
   aspect-ratio: 1944 / 1305;
 }
 
-/* -------------------- Badges de cine -------------------- */
 
 .badge-cine {
   display: inline-flex;
@@ -635,7 +614,6 @@ td.cine--tipas { color: var(--zone-tipas); font-weight: 600; }
 td.cine--imax { color: var(--zone-imax); font-weight: 600; }
 td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
 
-/* -------------------- Ficha de cine -------------------- */
 
 .dl-grid {
   display: grid;
@@ -661,8 +639,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   border: 0;
 }
 
-/* -------------------- Butacas -------------------- */
-
 .screen {
   width: 70%;
   max-width: 520px;
@@ -676,7 +652,7 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
 .screen__label {
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: -40px 0 40px;
@@ -786,7 +762,7 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   gap: 14px;
 }
 
-.seat-summary__count { color: var(--text-muted); font-size: 0.95rem; }
+.seat-summary__count { color: var(--text-muted); font-size: 1.5rem; }
 .seat-summary__count strong { color: var(--text); }
 
 .seat-summary__total {
@@ -795,7 +771,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   color: var(--gold);
 }
 
-/* -------------------- Footer -------------------- */
 
 .site-footer {
   border-top: 1px solid var(--line);
@@ -810,8 +785,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   flex-wrap: wrap;
   gap: 12px;
 }
-
-/* -------------------- Responsive -------------------- */
 
 @media (max-width: 780px) {
   .nav__links { gap: 16px; }
