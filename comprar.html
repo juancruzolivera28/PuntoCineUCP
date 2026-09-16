@@ -79,39 +79,47 @@
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="ultimo_vagon">
             <span>El Último Vagón — 21:00</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="4200">
             <span class="price">$4.200</span>
+            <span class="subtotal">$0</span>
           </label>
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="risas_atico">
             <span>Risas en el Ático — 17:15</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="3800">
             <span class="price">$3.800</span>
+            <span class="subtotal">$0</span>
           </label>
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="casa_fondo">
             <span>La Casa del Fondo — 22:15</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="4200">
             <span class="price">$4.200</span>
+            <span class="subtotal">$0</span>
           </label>
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="spiderman">
             <span>Spiderman — 19:30</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="4500">
             <span class="price">$4.500</span>
+            <span class="subtotal">$0</span>
           </label>
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="colores_otono">
             <span>Colores de Otoño — 18:30</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="3900">
             <span class="price">$3.900</span>
+            <span class="subtotal">$0</span>
           </label>
           <label class="product-list__row">
             <input type="checkbox" name="producto" value="la_odisea">
             <span>La Odisea — 16:00</span>
+            <input type="number" min="0" value="0" class="qty-input" data-price="3600">
             <span class="price">$3.600</span>
+            <span class="subtotal">$0</span>
           </label>
         </div>
-      </div>
-
-      <div class="field">
-        <label for="cantidad">Cantidad de entradas por función</label>
-        <input type="number" id="cantidad" name="cantidad" min="1" value="1" style="max-width:120px;">
+        <div class="form-summary">Total: $0</div>
       </div>
 
       <button type="submit" class="btn btn--primary btn--full">Confirmar compra</button>
@@ -127,5 +135,6 @@
     </div>
   </footer>
 
+  <script src="js/comprar.js"></script>
 </body>
 </html>
