@@ -1,0 +1,8 @@
+[
+  { "id": "ultimo_vagon", "nombre": "El Último Vagón — 21:00", "precio": 4200 },
+  { "id": "risas_atico", "nombre": "Risas en el Ático — 17:15", "precio": 3800 },
+  { "id": "casa_fondo", "nombre": "La Casa del Fondo — 22:15", "precio": 4200 },
+  { "id": "spiderman", "nombre": "Spiderman — 19:30", "precio": 4500 },
+  { "id": "colores_otono", "nombre": "Colores de Otoño — 18:30", "precio": 3900 },
+  { "id": "la_odisea", "nombre": "La Odisea — 16:00", "precio": 3600 }
+]
