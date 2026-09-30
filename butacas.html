@@ -44,72 +44,76 @@
     <div class="screen"></div>
     <p class="screen__label">Pantalla</p>
 
+    <div id="alerta-stock" class="alerta-stock" hidden>
+      Quedan pocas butacas disponibles para esta función.
+    </div>
+
     <div class="seat-map" id="seatMap" role="group" aria-label="Mapa de butacas de la sala">
       <div class="seat-row">
         <span class="seat-row__label">A</span>
-        <button type="button" class="seat" data-seat="A1" aria-label="Butaca A1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A2" aria-label="Butaca A2, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A3" aria-label="Butaca A3, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A4" aria-label="Butaca A4, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A5" aria-label="Butaca A5, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A6" aria-label="Butaca A6, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A7" aria-label="Butaca A7, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="A8" aria-label="Butaca A8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="A1" aria-label="Butaca A1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A2" aria-label="Butaca A2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A3" aria-label="Butaca A3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A4" aria-label="Butaca A4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A5" aria-label="Butaca A5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A6" aria-label="Butaca A6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A7" aria-label="Butaca A7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="A8" aria-label="Butaca A8" aria-pressed="false" disabled></button>
       </div>
       <div class="seat-row">
         <span class="seat-row__label">B</span>
-        <button type="button" class="seat" data-seat="B1" aria-label="Butaca B1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat seat--occupied" data-seat="B2" aria-label="Butaca B2, ocupada" disabled></button>
-        <button type="button" class="seat" data-seat="B3" aria-label="Butaca B3, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="B4" aria-label="Butaca B4, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="B5" aria-label="Butaca B5, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="B6" aria-label="Butaca B6, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="B7" aria-label="Butaca B7, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="B8" aria-label="Butaca B8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="B1" aria-label="Butaca B1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B2" aria-label="Butaca B2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B3" aria-label="Butaca B3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B4" aria-label="Butaca B4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B5" aria-label="Butaca B5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B6" aria-label="Butaca B6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B7" aria-label="Butaca B7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="B8" aria-label="Butaca B8" aria-pressed="false" disabled></button>
       </div>
       <div class="seat-row">
         <span class="seat-row__label">C</span>
-        <button type="button" class="seat" data-seat="C1" aria-label="Butaca C1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="C2" aria-label="Butaca C2, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat seat--occupied" data-seat="C3" aria-label="Butaca C3, ocupada" disabled></button>
-        <button type="button" class="seat seat--occupied" data-seat="C4" aria-label="Butaca C4, ocupada" disabled></button>
-        <button type="button" class="seat seat--occupied" data-seat="C5" aria-label="Butaca C5, ocupada" disabled></button>
-        <button type="button" class="seat" data-seat="C6" aria-label="Butaca C6, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="C7" aria-label="Butaca C7, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="C8" aria-label="Butaca C8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="C1" aria-label="Butaca C1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C2" aria-label="Butaca C2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C3" aria-label="Butaca C3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C4" aria-label="Butaca C4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C5" aria-label="Butaca C5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C6" aria-label="Butaca C6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C7" aria-label="Butaca C7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="C8" aria-label="Butaca C8" aria-pressed="false" disabled></button>
       </div>
       <div class="seat-row">
         <span class="seat-row__label">D</span>
-        <button type="button" class="seat" data-seat="D1" aria-label="Butaca D1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="D2" aria-label="Butaca D2, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="D3" aria-label="Butaca D3, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="D4" aria-label="Butaca D4, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="D5" aria-label="Butaca D5, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat seat--occupied" data-seat="D6" aria-label="Butaca D6, ocupada" disabled></button>
-        <button type="button" class="seat" data-seat="D7" aria-label="Butaca D7, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="D8" aria-label="Butaca D8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="D1" aria-label="Butaca D1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D2" aria-label="Butaca D2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D3" aria-label="Butaca D3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D4" aria-label="Butaca D4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D5" aria-label="Butaca D5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D6" aria-label="Butaca D6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D7" aria-label="Butaca D7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="D8" aria-label="Butaca D8" aria-pressed="false" disabled></button>
       </div>
       <div class="seat-row">
         <span class="seat-row__label">E</span>
-        <button type="button" class="seat" data-seat="E1" aria-label="Butaca E1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="E2" aria-label="Butaca E2, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="E3" aria-label="Butaca E3, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="E4" aria-label="Butaca E4, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="E5" aria-label="Butaca E5, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="E6" aria-label="Butaca E6, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat seat--occupied" data-seat="E7" aria-label="Butaca E7, ocupada" disabled></button>
-        <button type="button" class="seat" data-seat="E8" aria-label="Butaca E8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="E1" aria-label="Butaca E1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E2" aria-label="Butaca E2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E3" aria-label="Butaca E3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E4" aria-label="Butaca E4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E5" aria-label="Butaca E5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E6" aria-label="Butaca E6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E7" aria-label="Butaca E7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="E8" aria-label="Butaca E8" aria-pressed="false" disabled></button>
       </div>
       <div class="seat-row">
         <span class="seat-row__label">F</span>
-        <button type="button" class="seat" data-seat="F1" aria-label="Butaca F1, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F2" aria-label="Butaca F2, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F3" aria-label="Butaca F3, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F4" aria-label="Butaca F4, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F5" aria-label="Butaca F5, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F6" aria-label="Butaca F6, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F7" aria-label="Butaca F7, disponible" aria-pressed="false"></button>
-        <button type="button" class="seat" data-seat="F8" aria-label="Butaca F8, disponible" aria-pressed="false"></button>
+        <button type="button" class="seat" data-seat="F1" aria-label="Butaca F1" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F2" aria-label="Butaca F2" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F3" aria-label="Butaca F3" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F4" aria-label="Butaca F4" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F5" aria-label="Butaca F5" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F6" aria-label="Butaca F6" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F7" aria-label="Butaca F7" aria-pressed="false" disabled></button>
+        <button type="button" class="seat" data-seat="F8" aria-label="Butaca F8" aria-pressed="false" disabled></button>
       </div>
     </div>
 
@@ -138,6 +142,6 @@
     </div>
   </footer>
 
-  <script src="js/butacas.js"></script>
+  <script src="js/butacas.js" defer></script>
 </body>
 </html>
