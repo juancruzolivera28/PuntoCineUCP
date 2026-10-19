@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuntoCine — Mi cuenta</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="listado_tabla.html">Cartelera (tabla)</a></li>
+        <li><a href="listado_box.html">Cartelera (box)</a></li>
+        <li>
+          <details class="nav__dropdown">
+            <summary>Cines</summary>
+            <ul class="nav__dropdown__menu">
+              <li><a href="cines/las-tipas.html">Las Tipas</a></li>
+              <li><a href="cines/imax.html">IMAX</a></li>
+              <li><a href="cines/sunstar.html">Sunstar</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="butacas.html">Butacas</a></li>
+        <li><a href="comprar.html">Comprar entradas</a></li>
+        <li id="nav-auth" class="auth-nav"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <section class="section container auth-section" id="vista-publica">
+    <div class="section__head">
+      <h2>Mi cuenta</h2>
+    </div>
+
+    <div class="auth-tabs" role="tablist">
+      <button type="button" class="auth-tab auth-tab--active" id="tab-login" role="tab" aria-selected="true" aria-controls="panel-login">Ingresar</button>
+      <button type="button" class="auth-tab" id="tab-registro" role="tab" aria-selected="false" aria-controls="panel-registro">Crear cuenta</button>
+    </div>
+
+    <div class="auth-panel" id="panel-login" role="tabpanel">
+      <div id="mensaje-login" class="auth-mensaje" role="alert" hidden></div>
+      <form class="form" id="form-login">
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Ingresar</button>
+      </form>
+    </div>
+
+    <div class="auth-panel" id="panel-registro" role="tabpanel" hidden>
+      <div id="mensaje-registro" class="auth-mensaje" role="alert" hidden></div>
+      <form class="form" id="form-registro">
+        <div class="field">
+          <label for="registro-nombre">Nombre y apellido</label>
+          <input type="text" id="registro-nombre" name="nombre" placeholder="Pepito" required>
+        </div>
+        <div class="field">
+          <label for="registro-email">E-mail</label>
+          <input type="email" id="registro-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="registro-password">Contraseña</label>
+          <input type="password" id="registro-password" name="password" minlength="6" required>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Crear cuenta</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section container auth-section" id="panel-privado" hidden>
+    <div class="section__head">
+      <h2>Mi cuenta</h2>
+    </div>
+    <dl class="dl-grid">
+      <dt>Nombre</dt>
+      <dd><span id="user-nombre"></span></dd>
+      <dt>E-mail</dt>
+      <dd><span id="user-email"></span></dd>
+      <dt>Rol</dt>
+      <dd><span id="user-rol"></span></dd>
+    </dl>
+    <button type="button" class="btn btn--outline" id="btn-logout">Cerrar sesión</button>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
+    </div>
+  </footer>
+
+  <script src="js/auth.js" defer></script>
+</body>
+</html>
