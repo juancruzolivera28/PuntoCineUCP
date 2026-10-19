@@ -887,6 +887,105 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   gap: 12px;
 }
 
+/* Autenticación: estado de sesión en el nav */
+.auth-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-nav__saludo {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.auth-nav__salir,
+.auth-nav__ingresar {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.auth-nav__salir:hover,
+.auth-nav__ingresar:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Autenticación: pestañas de cuenta.html */
+.auth-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+
+.auth-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.auth-tab:hover { color: var(--text); }
+
+.auth-tab--active {
+  color: var(--text);
+  border-bottom-color: var(--gold);
+}
+
+.auth-panel { max-width: 420px; }
+
+/* Autenticación: mensajes de éxito/error */
+.auth-mensaje {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+}
+
+.auth-mensaje--error {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.auth-mensaje--exito {
+  border-color: #2e7d4f;
+  color: #4caf7d;
+}
+
+/* Autenticación: aviso en comprar.html sin sesión iniciada */
+.auth-aviso {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-aviso p { margin: 0 0 14px; color: var(--text-muted); }
+
+.auth-comprando-como {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 780px) {
   .nav__links { gap: 16px; }
   .product { grid-template-columns: 1fr; }
@@ -903,6 +1002,10 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   .seat-row { gap: 5px; }
   .seat-row__label { width: 16px; font-size: 0.75rem; }
   .seat-summary .container { flex-direction: column; align-items: flex-start; }
+  .auth-nav { flex-wrap: wrap; }
+  .auth-tabs { flex-wrap: wrap; }
+  .auth-tab { flex: 1; padding: 10px 12px; font-size: 0.9rem; }
+  .auth-panel { max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
