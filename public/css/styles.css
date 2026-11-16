@@ -468,6 +468,11 @@ a:focus-visible,
   cursor: pointer;
 }
 
+.payment-options input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 .product-list {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -918,6 +923,12 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
 .auth-nav__ingresar:hover {
   border-color: var(--gold);
   color: var(--gold);
+}
+
+.auth-nav__salir:focus-visible,
+.auth-nav__ingresar:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .auth-tabs {
