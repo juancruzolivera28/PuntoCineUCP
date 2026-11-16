@@ -34,7 +34,7 @@
     aviso.setAttribute('role', 'alert');
     aviso.textContent = mensaje;
     contenidoEl.hidden = true;
-    funcionEl.parentNode.insertBefore(aviso, contenidoEl);
+    contenidoEl.parentNode.insertBefore(aviso, contenidoEl);
   }
 
   function crearAsiento(butaca) {

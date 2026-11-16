@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$datos = json_decode(file_get_contents('php://input'), true);
+$datos = json_decode(file_get_contents('php://input'), true) ?? [];
 
 $email = trim($datos['email'] ?? '');
 $password = (string) ($datos['password'] ?? '');

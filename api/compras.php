@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$cuerpo = json_decode(file_get_contents('php://input'), true);
+$cuerpo = json_decode(file_get_contents('php://input'), true) ?? [];
 
 $nombre = trim($cuerpo['nombre'] ?? '');
 $direccion = trim($cuerpo['direccion'] ?? '');

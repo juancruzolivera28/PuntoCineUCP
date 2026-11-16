@@ -5,12 +5,6 @@
   var apiCines = new URL('../api/cines.php', scriptEl.src).href;
   var apiPeliculas = new URL('../api/peliculas.php', scriptEl.src).href;
 
-  var BADGE_POR_SLUG = {
-    'las-tipas': 'tipas',
-    'imax': 'imax',
-    'sunstar': 'sunstar',
-  };
-
   var ACENTOS = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
 
   function claseGenero(genero) {
