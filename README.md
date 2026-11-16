@@ -36,6 +36,12 @@ PuntoCine/
 
 La conexión en `config/conexion.php` usa las credenciales por defecto de XAMPP (usuario `root`, sin contraseña). Si tu instalación usa otras credenciales, actualizalas ahí.
 
+Si en vez de phpMyAdmin importás con el cliente `mysql` por línea de comandos en Windows, indicá el charset explícitamente, porque por defecto usa `cp850` y corrompe los acentos:
+
+```
+mysql -u root --default-character-set=utf8mb4 < sql/puntocine.sql
+```
+
 ## Casos de uso principales
 
 | Caso de uso | Endpoint |
