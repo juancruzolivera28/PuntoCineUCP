@@ -6,9 +6,8 @@
   <title>PuntoCine — Sunstar</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="theme-sunstar">
+<body class="theme-sunstar" data-cine-slug="sunstar">
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="../index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,7 +34,6 @@
 
   <main>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero__content">
       <p class="hero__eyebrow">Zona Centro · Costanera · Posadas</p>
@@ -44,85 +42,44 @@
     </div>
   </section>
 
-  <!-- Mapa de cines -->
   <section class="section container">
     <span class="badge-cine badge-cine--sunstar">Zona Centro</span>
-    <dl class="dl-grid">
+    <dl class="dl-grid" id="cine-info" aria-live="polite">
       <dt>Dirección</dt>
-      <dd>Av. Bolívar, junto al Posadas Plaza Shopping, Posadas, Misiones</dd>
+      <dd id="cine-direccion"></dd>
       <dt>Salas</dt>
-      <dd>2 salas (Sala 1 y Sala 2)</dd>
+      <dd id="cine-salas"></dd>
       <dt>Horario de boletería</dt>
-      <dd>Todos los días de 13:00 a 23:30</dd>
+      <dd id="cine-horario"></dd>
     </dl>
 
     <h3 class="section-subtitle">Cómo llegar</h3>
     <div class="map-embed">
       <iframe
-        src="https://www.google.com/maps?q=Posadas+Plaza+Shopping,+Posadas,+Misiones&output=embed"
+        id="cine-mapa"
+        title="Ubicación de Sunstar en el mapa"
         allowfullscreen loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
 
-    <!-- Cartelera del cine -->
     <div class="section__head section__head--offset">
       <h2>Cartelera en Sunstar</h2>
-      <p class="muted">2 películas en cartel</p>
+      <p class="muted" id="cine-cartelera-cantidad"></p>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <!-- Para poner imagen real: ../img/posters/risas-en-el-atico.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-comedia); background-image: url('../img/posters/risas-en-el-atico.jpg');">
-          <span class="poster__title">Risas en el Ático</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">Risas en el Ático</h3>
-          <div class="card__meta">
-            <span class="tag">Comedia</span>
-            <span class="tag">ATP</span>
-            <span class="tag">95 min</span>
-            <span class="tag">Sala 1</span>
-          </div>
-          <p class="muted">Dos hermanos heredan una casa embrujada por las malas decisiones de su familia.</p>
-          <p class="muted func-times">Funciones: 14:00 · 17:15 · 20:30</p>
-          <span class="card__price">$3.800</span>
-          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <!-- Para poner imagen real: ../img/posters/la-odisea.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-drama); background-image: url('../img/posters/la-odisea.jpg');">
-          <span class="poster__title">La Odisea</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">La Odisea</h3>
-          <div class="card__meta">
-            <span class="tag">Drama</span>
-            <span class="tag">+13</span>
-            <span class="tag">88 min</span>
-            <span class="tag">Sala 2</span>
-          </div>
-          <p class="muted">Un guerrero intenta volver a casa tras la guerra, enfrentando monstruos, tormentas y dioses que ponen a prueba su destino.</p>
-          <p class="muted func-times">Funciones: 13:00 · 16:00 · 18:00</p>
-          <span class="card__price">$3.600</span>
-          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
-        </div>
-      </div>
-    </div>
+    <div class="grid" id="cine-cartelera" aria-live="polite"></div>
   </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
     </div>
   </footer>
 
+  <script src="../js/cines.js" defer></script>
   <script src="../js/auth.js" defer></script>
 </body>
 </html>

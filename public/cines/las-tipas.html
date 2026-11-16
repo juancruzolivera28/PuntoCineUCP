@@ -6,9 +6,8 @@
   <title>PuntoCine — Las Tipas</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="theme-tipas">
+<body class="theme-tipas" data-cine-slug="las-tipas">
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="../index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,7 +34,6 @@
 
   <main>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero__content">
       <p class="hero__eyebrow">Zona Sur · Posadas</p>
@@ -44,85 +42,44 @@
     </div>
   </section>
 
-  <!-- Mapa de cines -->
   <section class="section container">
     <span class="badge-cine badge-cine--tipas">Zona Sur</span>
-    <dl class="dl-grid">
+    <dl class="dl-grid" id="cine-info" aria-live="polite">
       <dt>Dirección</dt>
-      <dd>Av. Santa Cruz, cerca de Hipermercado Libertad, Posadas, Misiones</dd>
+      <dd id="cine-direccion"></dd>
       <dt>Salas</dt>
-      <dd>2 salas (Sala 1 y Sala 2)</dd>
+      <dd id="cine-salas"></dd>
       <dt>Horario de boletería</dt>
-      <dd>Todos los días de 13:00 a 23:30</dd>
+      <dd id="cine-horario"></dd>
     </dl>
 
     <h3 class="section-subtitle">Cómo llegar</h3>
     <div class="map-embed">
       <iframe
-        src="https://www.google.com/maps?q=Hipermercado+Libertad,+Posadas,+Misiones&output=embed"
+        id="cine-mapa"
+        title="Ubicación de Las Tipas en el mapa"
         allowfullscreen loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
 
-    <!-- Cartelera del cine -->
     <div class="section__head section__head--offset">
       <h2>Cartelera en Las Tipas</h2>
-      <p class="muted">2 películas en cartel</p>
+      <p class="muted" id="cine-cartelera-cantidad"></p>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <!-- Para poner imagen real: ../img/posters/el-ultimo-vagon.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-accion); background-image: url('../img/posters/el-ultimo-vagon.jpg');">
-          <span class="poster__title">El Último Vagón</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">El Último Vagón</h3>
-          <div class="card__meta">
-            <span class="tag">Acción</span>
-            <span class="tag">+13</span>
-            <span class="tag">118 min</span>
-            <span class="tag">Sala 1</span>
-          </div>
-          <p class="muted">Un maquinista debe detener un tren fantasma antes de que amanezca.</p>
-          <p class="muted func-times">Funciones: 15:30 · 18:00 · 21:00</p>
-          <span class="card__price">$4.200</span>
-          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <!-- Para poner imagen real: ../img/posters/colores-de-otono.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-drama); background-image: url('../img/posters/colores-de-otono.jpg');">
-          <span class="poster__title">Colores de Otoño</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">Colores de Otoño</h3>
-          <div class="card__meta">
-            <span class="tag">Drama</span>
-            <span class="tag">+13</span>
-            <span class="tag">110 min</span>
-            <span class="tag">Sala 2</span>
-          </div>
-          <p class="muted">Una pintora vuelve a su pueblo natal para enfrentar el legado de su padre.</p>
-          <p class="muted func-times">Funciones: 15:00 · 18:30</p>
-          <span class="card__price">$3.900</span>
-          <a href="../producto.html" class="btn btn--outline btn--full">Ver ficha</a>
-        </div>
-      </div>
-    </div>
+    <div class="grid" id="cine-cartelera" aria-live="polite"></div>
   </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
     </div>
   </footer>
 
+  <script src="../js/cines.js" defer></script>
   <script src="../js/auth.js" defer></script>
 </body>
 </html>

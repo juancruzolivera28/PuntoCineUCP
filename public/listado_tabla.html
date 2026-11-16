@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,11 +34,10 @@
 
   <main>
 
-  <!-- Cartelera completa (tabla) -->
   <section class="section container">
     <div class="section__head">
-      <h2>Cartelera completa</h2>
-      <p class="muted">6 películas en cartel esta semana, en los 3 cines de Posadas</p>
+      <h1>Cartelera completa</h1>
+      <p class="muted" id="cartelera-cantidad"></p>
     </div>
 
     <div class="table-wrap">
@@ -57,87 +55,20 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>El Último Vagón</td>
-            <td class="cine--tipas">Las Tipas</td>
-            <td>Acción</td>
-            <td>118 min</td>
-            <td>+13</td>
-            <td>Sala 1</td>
-            <td>15:30 · 18:00 · 21:00</td>
-            <td class="price">$4.200</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-          <tr>
-            <td>Colores de Otoño</td>
-            <td class="cine--tipas">Las Tipas</td>
-            <td>Drama</td>
-            <td>110 min</td>
-            <td>+13</td>
-            <td>Sala 2</td>
-            <td>15:00 · 18:30</td>
-            <td class="price">$3.900</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-          <tr>
-            <td>Spiderman</td>
-            <td class="cine--imax">IMAX</td>
-            <td>Acción</td>
-            <td>132 min</td>
-            <td>+13</td>
-            <td>Sala IMAX</td>
-            <td>16:00 · 19:30</td>
-            <td class="price">$4.500</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-          <tr>
-            <td>La Casa del Fondo</td>
-            <td class="cine--imax">IMAX</td>
-            <td>Terror</td>
-            <td>102 min</td>
-            <td>+16</td>
-            <td>Sala 2</td>
-            <td>19:00 · 22:15</td>
-            <td class="price">$4.200</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-          <tr>
-            <td>Risas en el Ático</td>
-            <td class="cine--sunstar">Sunstar</td>
-            <td>Comedia</td>
-            <td>95 min</td>
-            <td>ATP</td>
-            <td>Sala 1</td>
-            <td>14:00 · 17:15 · 20:30</td>
-            <td class="price">$3.800</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-          <tr>
-            <td>La Odisea</td>
-            <td class="cine--sunstar">Sunstar</td>
-            <td>Drama</td>
-            <td>88 min</td>
-            <td>+13</td>
-            <td>Sala 2</td>
-            <td>13:00 · 16:00 · 18:00</td>
-            <td class="price">$3.600</td>
-            <td><a href="producto.html">Ver ficha</a></td>
-          </tr>
-        </tbody>
+        <tbody id="cartelera-tabla" aria-live="polite"></tbody>
       </table>
     </div>
   </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
     </div>
   </footer>
 
+  <script src="js/peliculas.js" defer></script>
   <script src="js/auth.js" defer></script>
 </body>
 </html>

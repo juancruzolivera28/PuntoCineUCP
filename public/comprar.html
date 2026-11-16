@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,21 +34,13 @@
 
   <main>
 
-  <!-- Formulario de compra -->
   <section class="section container">
-    <h2>Completá tus datos</h2>
-    <p class="muted" style="margin-bottom:32px;">Elegí las funciones que querés reservar y dejanos tus datos para confirmar la compra.</p>
+    <h1>Completá tus datos</h1>
+    <p class="muted" style="margin-bottom:32px;">Confirmá tu selección de butacas y dejanos tus datos para completar la compra.</p>
 
-    <!-- Se oculta/muestra según haya sesión activa (ver js/auth.js) -->
-    <div id="aviso-sesion" class="auth-aviso" hidden>
-      <p>Iniciá sesión para comprar.</p>
-      <a href="cuenta.html" class="btn btn--primary">Ingresar</a>
-    </div>
+    <div id="resumen-compra" class="auth-mensaje" aria-live="polite" hidden></div>
 
-    <p id="comprando-como" class="auth-comprando-como" hidden></p>
-
-    <!-- Se usa POST y no GET porque el formulario envía datos personales y de pago, que no deben quedar expuestos en la URL ni en el historial del navegador -->
-    <form class="form" id="form-compra" action="#" method="post">
+    <form class="form" id="form-compra">
 
       <div class="field">
         <label for="nombre">Nombre y apellido</label>
@@ -73,87 +64,11 @@
       </div>
 
       <div class="field">
-        <label>Medio de pago</label>
-        <div class="payment-options">
-          <label><input type="radio" name="pago" value="tarjeta_credito" checked> Tarjeta de crédito</label>
-          <label><input type="radio" name="pago" value="tarjeta_debito"> Tarjeta de débito</label>
-          <label><input type="radio" name="pago" value="mercado_pago"> Mercado Pago</label>
-          <label><input type="radio" name="pago" value="efectivo"> Efectivo</label>
-        </div>
+        <label id="label-medio-pago">Medio de pago</label>
+        <div class="payment-options" id="medios-pago" aria-live="polite"></div>
       </div>
 
-      <div class="field">
-        <label>Funciones a comprar</label>
-        <div class="product-list">
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="ultimo_vagon">
-            <span>El Último Vagón — 21:00</span>
-            <div class="qty-control" data-id="ultimo_vagon">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$4.200</span>
-            <span class="subtotal">$0</span>
-          </label>
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="risas_atico">
-            <span>Risas en el Ático — 17:15</span>
-            <div class="qty-control" data-id="risas_atico">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$3.800</span>
-            <span class="subtotal">$0</span>
-          </label>
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="casa_fondo">
-            <span>La Casa del Fondo — 22:15</span>
-            <div class="qty-control" data-id="casa_fondo">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$4.200</span>
-            <span class="subtotal">$0</span>
-          </label>
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="spiderman">
-            <span>Spiderman — 19:30</span>
-            <div class="qty-control" data-id="spiderman">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$4.500</span>
-            <span class="subtotal">$0</span>
-          </label>
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="colores_otono">
-            <span>Colores de Otoño — 18:30</span>
-            <div class="qty-control" data-id="colores_otono">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$3.900</span>
-            <span class="subtotal">$0</span>
-          </label>
-          <label class="product-list__row">
-            <input type="checkbox" name="producto" value="la_odisea">
-            <span>La Odisea — 16:00</span>
-            <div class="qty-control" data-id="la_odisea">
-              <button type="button" class="qty-btn qty-btn--minus" aria-label="Restar" disabled>−</button>
-              <span class="qty-value" aria-live="polite">0</span>
-              <button type="button" class="qty-btn qty-btn--plus" aria-label="Sumar" disabled>+</button>
-            </div>
-            <span class="price">$3.600</span>
-            <span class="subtotal">$0</span>
-          </label>
-        </div>
-        <div class="form-summary">Total: $0</div>
-      </div>
+      <div id="mensaje-compra" class="auth-mensaje" role="alert" hidden></div>
 
       <button type="submit" class="btn btn--primary btn--full">Confirmar compra</button>
     </form>
@@ -161,14 +76,13 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Av. Siempre Viva 742, Posadas · contacto@puntocine.com</span>
     </div>
   </footer>
 
-  <script src="js/app.js" defer></script>
+  <script src="js/comprar.js" defer></script>
   <script src="js/auth.js" defer></script>
 </body>
 </html>

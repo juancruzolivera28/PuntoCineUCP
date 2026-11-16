@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,7 +34,6 @@
 
   <main>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero__content">
       <p class="hero__eyebrow">Cartelera de esta semana</p>
@@ -45,68 +43,15 @@
     </div>
   </section>
 
-  <!-- Cartelera destacada -->
   <section class="section container">
     <div class="section__head">
       <h2>Destacadas de la semana</h2>
       <a href="listado_box.html">Ver todas &rsaquo;</a>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <!-- Para poner imagen real: img/posters/el-ultimo-vagon.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-accion); background-image: url('img/posters/el-ultimo-vagon.jpg');">
-          <span class="poster__title">El Último Vagón</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">El Último Vagón</h3>
-          <div class="card__meta">
-            <span class="badge-cine badge-cine--tipas">Las Tipas</span>
-            <span class="tag">Acción</span>
-            <span class="tag">+13</span>
-          </div>
-          <p class="muted">Un maquinista debe detener un tren fantasma antes de que amanezca.</p>
-          <span class="card__price">$4.200</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <!-- Para poner imagen real: img/posters/la-casa-del-fondo.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-terror); background-image: url('img/posters/la-casa-del-fondo.jpg');">
-          <span class="poster__title">La Casa del Fondo</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">La Casa del Fondo</h3>
-          <div class="card__meta">
-            <span class="badge-cine badge-cine--imax">IMAX</span>
-            <span class="tag">Terror</span>
-            <span class="tag">+16</span>
-          </div>
-          <p class="muted">Una familia se muda a un pueblo donde las sombras recuerdan más que las personas.</p>
-          <span class="card__price">$4.200</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <!-- Para poner imagen real: img/posters/la-odisea.jpg -->
-        <div class="poster" style="--genre-color: var(--genre-drama); background-image: url('img/posters/la-odisea.jpg');">
-          <span class="poster__title">La Odisea</span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">La Odisea</h3>
-          <div class="card__meta">
-            <span class="badge-cine badge-cine--sunstar">Sunstar</span>
-            <span class="tag">Drama</span>
-            <span class="tag">+13</span>
-          </div>
-          <p class="muted">Un guerrero intenta volver a casa tras la guerra, enfrentando monstruos, tormentas y dioses que ponen a prueba su destino.</p>
-          <span class="card__price">$3.600</span>
-        </div>
-      </div>
-    </div>
+    <div class="grid" id="destacadas" aria-live="polite"></div>
   </section>
 
-  <!-- Nuestros cines -->
   <section class="section container" style="padding-top:0;">
     <div class="section__head">
       <h2>Nuestros cines</h2>
@@ -133,7 +78,6 @@
     </div>
   </section>
 
-  <!-- Mapa de cines -->
   <section class="section container" style="padding-bottom:0;">
     <div class="section__head">
       <h2>Posadas, Misiones</h2>
@@ -143,13 +87,13 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
     </div>
   </footer>
 
+  <script src="js/peliculas.js" defer></script>
   <script src="js/auth.js" defer></script>
 </body>
 </html>

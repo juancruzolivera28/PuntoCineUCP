@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PuntoCine — El Último Vagón</title>
+  <title>PuntoCine — Ficha de película</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Header / navegación -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo">Punto<span>Cine</span></a>
@@ -35,63 +34,47 @@
 
   <main>
 
-  <!-- Ficha de película -->
   <section class="section container">
-    <p class="muted"><a href="cines/las-tipas.html">&lsaquo; Volver a Las Tipas</a></p>
+    <p class="muted"><a href="listado_box.html">&lsaquo; Volver a la cartelera</a></p>
 
-    <div class="product">
-      <!-- Para poner imagen real: img/posters/el-ultimo-vagon.jpg -->
-      <div class="poster poster--lg" style="--genre-color: var(--genre-accion); background-image: url('img/posters/el-ultimo-vagon.jpg');">
-        <span class="poster__title">El Último Vagón</span>
+    <div class="product" id="ficha-pelicula" aria-live="polite">
+      <div class="poster poster--lg" id="ficha-poster">
+        <span class="poster__title" id="ficha-poster-titulo"></span>
       </div>
 
       <div class="product__info">
-        <div class="card__meta" style="margin-bottom:12px;">
-          <span class="badge-cine badge-cine--tipas">Las Tipas</span>
-          <span class="tag">Acción</span>
-          <span class="tag">+13</span>
-          <span class="tag">118 min</span>
-          <span class="tag">Sala 1</span>
-        </div>
+        <div class="card__meta" id="ficha-meta" style="margin-bottom:12px;"></div>
 
-        <h1>El Último Vagón</h1>
+        <h1 id="ficha-titulo"></h1>
 
-        <p>En una madrugada helada, el maquinista Tomás Ferreyra descubre que el tren de carga que conduce ya no obedece a ningún control humano. Con cada estación que atraviesa sin detenerse, la tripulación entiende que algo —o alguien— viaja con ellos desde el último túnel. Antes de que amanezca, Tomás deberá elegir entre saltar del tren o llegar hasta el final de la vía, cueste lo que cueste.</p>
+        <p id="ficha-sinopsis"></p>
 
         <dl>
           <dt>Dirección</dt>
-          <dd>Marina OIha</dd>
+          <dd id="ficha-director"></dd>
           <dt>Elenco</dt>
-          <dd>Julián Robledo, Carla Insaurralde, Hugo Menéndez</dd>
+          <dd id="ficha-elenco"></dd>
           <dt>Idioma</dt>
-          <dd>Español (subtitulada disponible)</dd>
+          <dd id="ficha-idioma"></dd>
           <dt>Cine</dt>
-          <dd>Las Tipas — Av. Santa Cruz, cerca de Hipermercado Libertad, Posadas</dd>
+          <dd id="ficha-cine"></dd>
         </dl>
 
-        <h3 style="font-size:1.1rem; margin-bottom:8px;">Funciones de hoy</h3>
-        <div class="showtimes">
-          <span class="pill">15:30</span>
-          <span class="pill">18:00</span>
-          <span class="pill">21:00</span>
-        </div>
-
-        <p style="font-size:1.3rem; font-weight:700; color:var(--gold); margin-bottom:20px;">$4.200 por entrada</p>
-
-        <a href="comprar.html" class="btn btn--primary">Comprar entradas</a>
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Elegí una función para comprar</h3>
+        <div class="showtimes" id="ficha-funciones"></div>
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <span>Las Tipas · IMAX · Sunstar — Posadas, Misiones</span>
     </div>
   </footer>
 
+  <script src="js/peliculas.js" defer></script>
   <script src="js/auth.js" defer></script>
 </body>
 </html>
