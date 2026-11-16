@@ -270,7 +270,6 @@ img, svg { display: block; max-width: 100%; }
   gap: 24px;
 }
 
-/* auto-fit (no auto-fill): con pocos items, las columnas ocupan todo el ancho en vez de dejar huecos vacíos */
 .grid--fit {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
@@ -887,7 +886,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   gap: 12px;
 }
 
-/* Autenticación: estado de sesión en el nav */
 .auth-nav {
   display: flex;
   align-items: center;
@@ -920,7 +918,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   color: var(--gold);
 }
 
-/* Autenticación: pestañas de cuenta.html */
 .auth-tabs {
   display: flex;
   gap: 4px;
@@ -942,6 +939,11 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
 
 .auth-tab:hover { color: var(--text); }
 
+.auth-tab:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 .auth-tab--active {
   color: var(--text);
   border-bottom-color: var(--gold);
@@ -949,7 +951,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
 
 .auth-panel { max-width: 420px; }
 
-/* Autenticación: mensajes de éxito/error */
 .auth-mensaje {
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -968,7 +969,6 @@ td.cine--sunstar { color: var(--zone-sunstar); font-weight: 600; }
   color: #4caf7d;
 }
 
-/* Autenticación: aviso en comprar.html sin sesión iniciada */
 .auth-aviso {
   background: var(--surface-alt);
   border: 1px solid var(--line);
