@@ -88,6 +88,7 @@
 
     var enlace = crearElemento('a', 'btn btn--outline btn--full', 'Ver ficha');
     enlace.href = 'producto.html?id=' + pelicula.id;
+    enlace.setAttribute('aria-label', 'Ver ficha de ' + pelicula.titulo);
     cuerpo.appendChild(enlace);
 
     tarjeta.appendChild(cuerpo);
@@ -111,6 +112,7 @@
     var celdaEnlace = document.createElement('td');
     var enlace = crearElemento('a', null, 'Ver ficha');
     enlace.href = 'producto.html?id=' + pelicula.id;
+    enlace.setAttribute('aria-label', 'Ver ficha de ' + pelicula.titulo);
     celdaEnlace.appendChild(enlace);
     fila.appendChild(celdaEnlace);
 
@@ -178,6 +180,7 @@
     var contenedor = document.getElementById('ficha-pelicula');
 
     if (!id) {
+      document.getElementById('ficha-titulo').textContent = 'Película no encontrada';
       mostrarError(contenedor, 'No se indicó qué película mostrar. Volvé a la cartelera y elegí una.');
       return;
     }
@@ -215,6 +218,7 @@
         funcionesEl.appendChild(crearPillFuncion(funcion));
       });
     } catch (error) {
+      document.getElementById('ficha-titulo').textContent = 'Película no encontrada';
       mostrarError(contenedor, 'No se pudo cargar la ficha de la película.');
       console.error(error);
     }

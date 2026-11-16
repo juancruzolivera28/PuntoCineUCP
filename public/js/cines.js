@@ -72,6 +72,7 @@
 
     var enlace = crearElemento('a', 'btn btn--outline btn--full', 'Ver ficha');
     enlace.href = '../producto.html?id=' + pelicula.id;
+    enlace.setAttribute('aria-label', 'Ver ficha de ' + pelicula.titulo);
     cuerpo.appendChild(enlace);
 
     tarjeta.appendChild(cuerpo);

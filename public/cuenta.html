@@ -44,8 +44,8 @@
       <button type="button" class="auth-tab" id="tab-registro" role="tab" aria-selected="false" aria-controls="panel-registro">Crear cuenta</button>
     </div>
 
-    <div class="auth-panel" id="panel-login" role="tabpanel">
-      <div id="mensaje-login" class="auth-mensaje" role="alert" aria-live="polite" hidden></div>
+    <div class="auth-panel" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+      <div id="mensaje-login" class="auth-mensaje" role="alert" hidden></div>
       <form class="form" id="form-login">
         <div class="field">
           <label for="login-email">E-mail</label>
@@ -59,8 +59,8 @@
       </form>
     </div>
 
-    <div class="auth-panel" id="panel-registro" role="tabpanel" hidden>
-      <div id="mensaje-registro" class="auth-mensaje" role="alert" aria-live="polite" hidden></div>
+    <div class="auth-panel" id="panel-registro" role="tabpanel" aria-labelledby="tab-registro" hidden>
+      <div id="mensaje-registro" class="auth-mensaje" role="alert" hidden></div>
       <form class="form" id="form-registro">
         <div class="field">
           <label for="registro-nombre">Nombre y apellido</label>
