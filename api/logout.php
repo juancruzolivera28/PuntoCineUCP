@@ -3,7 +3,12 @@ session_start();
 
 header('Content-Type: application/json; charset=utf-8');
 
-// Se vacía la sesión y se borra la cookie correspondiente
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['estado' => 'error', 'mensaje' => 'Método no permitido.']);
+    exit;
+}
+
 $_SESSION = [];
 
 if (ini_get('session.use_cookies')) {

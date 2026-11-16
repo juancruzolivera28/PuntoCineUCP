@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/../config/conexion.php';
+require_once __DIR__ . '/../models/Usuario.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
-// Este endpoint solo acepta POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['estado' => 'error', 'mensaje' => 'Método no permitido.']);
@@ -24,18 +24,14 @@ if ($email === '' || $password === '') {
 try {
     $pdo = obtenerConexion();
 
-    $consulta = $pdo->prepare('SELECT id, nombre, email, password, rol FROM usuarios WHERE email = :email');
-    $consulta->execute([':email' => $email]);
-    $usuario = $consulta->fetch();
+    $usuario = buscarUsuarioPorEmail($pdo, $email);
 
     if (!$usuario || !password_verify($password, $usuario['password'])) {
-        http_response_code(401);
-        // Mensaje genérico: no se aclara si falló el email o la contraseña
+        http_response_code(400);
         echo json_encode(['estado' => 'error', 'mensaje' => 'Email o contraseña incorrectos.']);
         exit;
     }
 
-    // Cookie de sesión HttpOnly + SameSite=Lax, configurada ANTES de abrir la sesión
     session_set_cookie_params([
         'lifetime' => 0,
         'path' => '/',
@@ -43,7 +39,7 @@ try {
         'samesite' => 'Lax',
     ]);
     session_start();
-    session_regenerate_id(true); // evita fijación de sesión
+    session_regenerate_id(true);
 
     $_SESSION['usuario_id'] = $usuario['id'];
     $_SESSION['usuario_nombre'] = $usuario['nombre'];
@@ -59,7 +55,7 @@ try {
             'rol' => $usuario['rol'],
         ],
     ]);
-} catch (PDOException $e) {
+} catch (PDOException $error) {
     http_response_code(500);
     echo json_encode(['estado' => 'error', 'mensaje' => 'No se pudo iniciar sesión.']);
 }
