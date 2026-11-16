@@ -42,20 +42,3 @@ function obtenerButacasPorFuncion(PDO $pdo, int $funcionId): ?array {
         'butacas' => $consulta->fetchAll(),
     ];
 }
-
-function butacaVendidaEnFuncion(PDO $pdo, int $funcionId, int $butacaId): bool {
-    $consulta = $pdo->prepare(
-        'SELECT id FROM compra_butacas WHERE funcion_id = :funcion_id AND butaca_id = :butaca_id'
-    );
-    $consulta->execute([':funcion_id' => $funcionId, ':butaca_id' => $butacaId]);
-
-    return (bool) $consulta->fetch();
-}
-
-function obtenerButacaDeSala(PDO $pdo, int $butacaId, int $salaId): ?array {
-    $consulta = $pdo->prepare('SELECT id, codigo FROM butacas WHERE id = :id AND sala_id = :sala_id');
-    $consulta->execute([':id' => $butacaId, ':sala_id' => $salaId]);
-    $butaca = $consulta->fetch();
-
-    return $butaca ?: null;
-}
