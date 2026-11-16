@@ -2,8 +2,8 @@
   'use strict';
 
   var scriptEl = document.currentScript;
-  var apiCines = new URL('../api/cines.php', scriptEl.src).href;
-  var apiPeliculas = new URL('../api/peliculas.php', scriptEl.src).href;
+  var apiCines = new URL('../../api/cines.php', scriptEl.src).href;
+  var apiPeliculas = new URL('../../api/peliculas.php', scriptEl.src).href;
 
   var ACENTOS = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
 

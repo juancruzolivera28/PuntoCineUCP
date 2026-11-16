@@ -2,7 +2,7 @@
   'use strict';
 
   var scriptEl = document.currentScript;
-  var apiPeliculas = new URL('../api/peliculas.php', scriptEl.src).href;
+  var apiPeliculas = new URL('../../api/peliculas.php', scriptEl.src).href;
 
   var BADGE_POR_SLUG = {
     'las-tipas': 'tipas',

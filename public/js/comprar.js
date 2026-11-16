@@ -4,8 +4,8 @@
   var CLAVE_SESION = 'puntocine:seleccion';
 
   var scriptEl = document.currentScript;
-  var apiMediosPago = new URL('../api/medios_pago.php', scriptEl.src).href;
-  var apiCompras = new URL('../api/compras.php', scriptEl.src).href;
+  var apiMediosPago = new URL('../../api/medios_pago.php', scriptEl.src).href;
+  var apiCompras = new URL('../../api/compras.php', scriptEl.src).href;
 
   var form = document.getElementById('form-compra');
   var resumenEl = document.getElementById('resumen-compra');

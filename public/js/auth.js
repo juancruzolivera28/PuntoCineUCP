@@ -2,10 +2,10 @@
   'use strict';
 
   var scriptEl = document.currentScript;
-  var apiPerfil = new URL('../api/perfil.php', scriptEl.src).href;
-  var apiLogin = new URL('../api/login.php', scriptEl.src).href;
-  var apiRegistro = new URL('../api/registro.php', scriptEl.src).href;
-  var apiLogout = new URL('../api/logout.php', scriptEl.src).href;
+  var apiPerfil = new URL('../../api/perfil.php', scriptEl.src).href;
+  var apiLogin = new URL('../../api/login.php', scriptEl.src).href;
+  var apiRegistro = new URL('../../api/registro.php', scriptEl.src).href;
+  var apiLogout = new URL('../../api/logout.php', scriptEl.src).href;
   var paginaCuenta = new URL('../cuenta.html', scriptEl.src).href;
 
   async function obtenerPerfil() {

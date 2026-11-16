@@ -5,7 +5,7 @@
   var CLAVE_SESION = 'puntocine:seleccion';
 
   var scriptEl = document.currentScript;
-  var apiButacas = new URL('../api/butacas.php', scriptEl.src).href;
+  var apiButacas = new URL('../../api/butacas.php', scriptEl.src).href;
 
   var seatMap = document.getElementById('seatMap');
   var funcionEl = document.getElementById('butacas-funcion');
