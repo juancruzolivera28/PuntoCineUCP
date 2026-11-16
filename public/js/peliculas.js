@@ -58,7 +58,7 @@
     return cuerpo.data;
   }
 
-  function crearTarjetaCartelera(pelicula) {
+  function crearTarjetaCartelera(pelicula, nivelTitulo) {
     var funciones = pelicula.funciones || [];
     var primera = funciones[0];
 
@@ -71,7 +71,7 @@
     tarjeta.appendChild(poster);
 
     var cuerpo = crearElemento('div', 'card__body');
-    cuerpo.appendChild(crearElemento('h3', 'card__title', pelicula.titulo));
+    cuerpo.appendChild(crearElemento(nivelTitulo || 'h3', 'card__title', pelicula.titulo));
 
     var meta = crearElemento('div', 'card__meta');
     if (primera) {
@@ -137,7 +137,7 @@
       var peliculas = await obtenerPeliculas();
       if (cantidadEl) cantidadEl.textContent = peliculas.length + ' películas en cartel esta semana, en los 3 cines de Posadas';
       peliculas.forEach(function (pelicula) {
-        contenedor.appendChild(crearTarjetaCartelera(pelicula));
+        contenedor.appendChild(crearTarjetaCartelera(pelicula, 'h2'));
       });
     } catch (error) {
       mostrarError(contenedor, 'No se pudo cargar la cartelera.');
