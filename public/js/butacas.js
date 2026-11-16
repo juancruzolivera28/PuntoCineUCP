@@ -1,11 +1,15 @@
 (function () {
   'use strict';
 
-  var BUTACAS_URL = 'data/butacas.json';
-  var PRECIO_BUTACA = 4200;
   var UMBRAL_CRITICO = 8;
+  var CLAVE_SESION = 'puntocine:seleccion';
+
+  var scriptEl = document.currentScript;
+  var apiButacas = new URL('../api/butacas.php', scriptEl.src).href;
 
   var seatMap = document.getElementById('seatMap');
+  var funcionEl = document.getElementById('butacas-funcion');
+  var contenidoEl = document.getElementById('butacas-contenido');
   var seatCountEl = document.getElementById('seatCount');
   var seatTotalEl = document.getElementById('seatTotal');
   var continueBtn = document.getElementById('continueBtn');
@@ -13,8 +17,15 @@
 
   if (!seatMap) return;
 
+  var funcionActual = null;
+  var seleccion = {};
+
   function formatearPrecio(valor) {
-    return '$' + valor.toLocaleString('es-AR');
+    return '$' + Number(valor).toLocaleString('es-AR');
+  }
+
+  function formatearHora(horario) {
+    return horario.slice(0, 5);
   }
 
   function mostrarError(mensaje) {
@@ -22,38 +33,52 @@
     aviso.className = 'carga-error';
     aviso.setAttribute('role', 'alert');
     aviso.textContent = mensaje;
-    seatMap.parentNode.insertBefore(aviso, seatMap);
+    contenidoEl.hidden = true;
+    funcionEl.parentNode.insertBefore(aviso, contenidoEl);
   }
 
-  // Simula la respuesta de un servidor con el estado real de la sala: el
-  // libre/ocupada de cada butaca ya no está hardcodeado en el HTML ni el JS.
-  async function cargarButacas() {
-    const respuesta = await fetch(BUTACAS_URL);
+  function crearAsiento(butaca) {
+    var boton = document.createElement('button');
+    boton.type = 'button';
+    boton.className = 'seat';
+    boton.dataset.seat = butaca.codigo;
+    boton.dataset.butacaId = butaca.id;
+    boton.setAttribute('aria-pressed', 'false');
 
-    if (!respuesta.ok) {
-      throw new Error('Respuesta HTTP ' + respuesta.status);
-    }
+    var ocupada = butaca.estado === 'ocupada';
+    boton.classList.toggle('seat--occupied', ocupada);
+    boton.disabled = ocupada;
+    boton.setAttribute('aria-label', 'Butaca ' + butaca.codigo + ', ' + (ocupada ? 'ocupada' : 'disponible'));
 
-    const butacas = await respuesta.json();
-    return butacas;
+    return boton;
   }
 
-  function pintarButaca(seat, estado) {
-    var ocupada = estado === 'ocupada';
+  function construirGrilla(butacas) {
+    var filas = {};
+    var orden = [];
 
-    seat.classList.toggle('seat--occupied', ocupada);
-    seat.disabled = ocupada;
-    seat.setAttribute('aria-pressed', 'false');
-    seat.setAttribute(
-      'aria-label',
-      'Butaca ' + seat.dataset.seat + ', ' + (ocupada ? 'ocupada' : 'disponible')
-    );
-  }
-
-  function pintarGrilla(butacas) {
     butacas.forEach(function (butaca) {
-      var seat = seatMap.querySelector('.seat[data-seat="' + butaca.id + '"]');
-      if (seat) pintarButaca(seat, butaca.estado);
+      if (!filas[butaca.fila]) {
+        filas[butaca.fila] = [];
+        orden.push(butaca.fila);
+      }
+      filas[butaca.fila].push(butaca);
+    });
+
+    orden.forEach(function (fila) {
+      var filaEl = document.createElement('div');
+      filaEl.className = 'seat-row';
+
+      var etiqueta = document.createElement('span');
+      etiqueta.className = 'seat-row__label';
+      etiqueta.textContent = fila;
+      filaEl.appendChild(etiqueta);
+
+      filas[fila].forEach(function (butaca) {
+        filaEl.appendChild(crearAsiento(butaca));
+      });
+
+      seatMap.appendChild(filaEl);
     });
   }
 
@@ -63,70 +88,89 @@
     var totalButacas = seatMap.querySelectorAll('.seat').length;
     var ocupadas = seatMap.querySelectorAll('.seat--occupied').length;
     var seleccionadas = seatMap.querySelectorAll('.seat--selected').length;
-
-    // Una butaca seleccionada ya no está disponible para otro comprador
-    // mientras dura esta reserva, así que cuenta como "stock" consumido
-    // igual que una ocupada a los fines de la alerta.
     var disponibles = totalButacas - ocupadas - seleccionadas;
 
     alertaEl.hidden = disponibles > UMBRAL_CRITICO;
   }
 
   function actualizarResumen() {
-    var seleccionadas = seatMap.querySelectorAll('.seat--selected').length;
-    seatCountEl.textContent = seleccionadas;
-    seatTotalEl.textContent = formatearPrecio(seleccionadas * PRECIO_BUTACA);
+    var cantidad = Object.keys(seleccion).length;
+    seatCountEl.textContent = cantidad;
+    seatTotalEl.textContent = formatearPrecio(cantidad * funcionActual.precio);
 
     if (continueBtn) {
-      var habilitado = seleccionadas > 0;
-      continueBtn.setAttribute('aria-disabled', String(!habilitado));
+      continueBtn.setAttribute('aria-disabled', String(cantidad === 0));
     }
 
     actualizarAlerta();
   }
 
-  function alternarButaca(seat) {
-    if (seat.disabled || seat.classList.contains('seat--occupied')) return;
+  function alternarButaca(boton) {
+    if (boton.disabled) return;
 
-    var seleccionada = seat.classList.toggle('seat--selected');
-    seat.setAttribute('aria-pressed', String(seleccionada));
-    seat.setAttribute(
-      'aria-label',
-      'Butaca ' + seat.dataset.seat + ', ' + (seleccionada ? 'seleccionada' : 'disponible')
-    );
+    var seleccionada = boton.classList.toggle('seat--selected');
+    boton.setAttribute('aria-pressed', String(seleccionada));
+    boton.setAttribute('aria-label', 'Butaca ' + boton.dataset.seat + ', ' + (seleccionada ? 'seleccionada' : 'disponible'));
+
+    if (seleccionada) {
+      seleccion[boton.dataset.butacaId] = boton.dataset.seat;
+    } else {
+      delete seleccion[boton.dataset.butacaId];
+    }
 
     actualizarResumen();
   }
 
   seatMap.addEventListener('click', function (evento) {
-    var seat = evento.target.closest('.seat');
-    if (seat) alternarButaca(seat);
+    var boton = evento.target.closest('.seat');
+    if (boton) alternarButaca(boton);
   });
 
   if (continueBtn) {
     continueBtn.addEventListener('click', function (evento) {
       if (continueBtn.getAttribute('aria-disabled') === 'true') {
         evento.preventDefault();
+        return;
       }
+
+      var butacaIds = Object.keys(seleccion);
+      sessionStorage.setItem(CLAVE_SESION, JSON.stringify({
+        funcion: funcionActual,
+        butacas: butacaIds.map(function (id) {
+          return { id: Number(id), codigo: seleccion[id] };
+        }),
+      }));
     });
   }
 
+  async function cargarButacas(funcionId) {
+    var respuesta = await fetch(apiButacas + '?funcion_id=' + encodeURIComponent(funcionId));
+    var cuerpo = await respuesta.json();
+    if (!respuesta.ok) throw new Error(cuerpo.mensaje || 'No se pudo cargar la función.');
+    return cuerpo.data;
+  }
+
   document.addEventListener('DOMContentLoaded', async function () {
+    var parametros = new URLSearchParams(window.location.search);
+    var funcionId = parametros.get('funcion_id');
+
+    if (!funcionId) {
+      mostrarError('No se indicó qué función mostrar. Elegí una película y una función desde la cartelera.');
+      return;
+    }
+
     try {
-      var butacas = await cargarButacas();
-      pintarGrilla(butacas);
+      var datos = await cargarButacas(funcionId);
+      funcionActual = datos.funcion;
+
+      funcionEl.textContent = funcionActual.pelicula_titulo + ' · ' + funcionActual.cine_nombre + ' · ' +
+        funcionActual.sala_nombre + ' · Hoy ' + formatearHora(funcionActual.horario);
+
+      construirGrilla(datos.butacas);
       actualizarResumen();
     } catch (error) {
-      // Si se abre butacas.html con doble clic (protocolo file://), fetch()
-      // de un archivo local puede fallar por CORS: se avisa en el DOM.
-      mostrarError(
-        'No se pudo cargar el estado de las butacas. ' +
-        'Si abriste este archivo con doble clic, probá servirlo desde un ' +
-        'servidor local (por ejemplo "Live Server" de VS Code o ' +
-        '"python -m http.server"), ya que los navegadores bloquean fetch() ' +
-        'sobre archivos abiertos con file://.'
-      );
-      console.error('Error al cargar butacas:', error);
+      mostrarError('No se pudo cargar el estado de las butacas de esta función.');
+      console.error(error);
     }
   });
 })();

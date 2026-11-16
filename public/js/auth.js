@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  // document.currentScript.src funciona igual desde la raíz (js/auth.js)
-  // que desde cines/ (../js/auth.js): el navegador siempre lo resuelve a
-  // la misma URL absoluta, así que api/ queda bien ubicada en ambos casos.
   var scriptEl = document.currentScript;
   var apiPerfil = new URL('../api/perfil.php', scriptEl.src).href;
   var apiLogin = new URL('../api/login.php', scriptEl.src).href;
@@ -11,7 +8,6 @@
   var apiLogout = new URL('../api/logout.php', scriptEl.src).href;
   var paginaCuenta = new URL('../cuenta.html', scriptEl.src).href;
 
-  // Pide el perfil actual; null si no hay sesión (401)
   async function obtenerPerfil() {
     try {
       var respuesta = await fetch(apiPerfil);
@@ -32,7 +28,6 @@
     }
   }
 
-  // Pinta el estado de sesión en el <li id="nav-auth"> de cada página
   function pintarNav(usuario) {
     var navAuth = document.getElementById('nav-auth');
     if (!navAuth) return;
@@ -61,28 +56,6 @@
       link.className = 'auth-nav__ingresar';
       link.textContent = 'Ingresar';
       navAuth.appendChild(link);
-    }
-  }
-
-  // En comprar.html: oculta/muestra el formulario según haya sesión o no
-  function ajustarComprar(usuario) {
-    var form = document.getElementById('form-compra');
-    if (!form) return;
-
-    var aviso = document.getElementById('aviso-sesion');
-    var comprandoComo = document.getElementById('comprando-como');
-
-    if (usuario) {
-      form.hidden = false;
-      if (aviso) aviso.hidden = true;
-      if (comprandoComo) {
-        comprandoComo.hidden = false;
-        comprandoComo.textContent = 'Comprando como: ' + usuario.nombre;
-      }
-    } else {
-      form.hidden = true;
-      if (aviso) aviso.hidden = false;
-      if (comprandoComo) comprandoComo.hidden = true;
     }
   }
 
@@ -115,7 +88,6 @@
     tabRegistro.addEventListener('click', function () { activar('registro'); });
   }
 
-  // Cambia de la vista pública (pestañas) al panel privado de cuenta.html
   function mostrarPanelPrivado(usuario) {
     var vistaPublica = document.getElementById('vista-publica');
     var panelPrivado = document.getElementById('panel-privado');
@@ -129,7 +101,6 @@
     document.getElementById('user-rol').textContent = usuario.rol;
   }
 
-  // Lógica propia de cuenta.html: pestañas, submits y logout del panel
   function inicializarCuenta(usuario) {
     var formLogin = document.getElementById('form-login');
     var formRegistro = document.getElementById('form-registro');
@@ -210,7 +181,6 @@
   document.addEventListener('DOMContentLoaded', async function () {
     var usuario = await obtenerPerfil();
     pintarNav(usuario);
-    ajustarComprar(usuario);
     inicializarCuenta(usuario);
   });
 })();

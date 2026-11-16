@@ -3,7 +3,7 @@
 function obtenerFuncionesPorPelicula(PDO $pdo, int $peliculaId): array {
     $consulta = $pdo->prepare(
         'SELECT f.id, f.horario, f.precio, s.id AS sala_id, s.nombre AS sala_nombre, ' .
-        'c.id AS cine_id, c.slug AS cine_slug, c.nombre AS cine_nombre ' .
+        'c.id AS cine_id, c.slug AS cine_slug, c.nombre AS cine_nombre, c.direccion AS cine_direccion ' .
         'FROM funciones f ' .
         'JOIN salas s ON s.id = f.sala_id ' .
         'JOIN cines c ON c.id = s.cine_id ' .
