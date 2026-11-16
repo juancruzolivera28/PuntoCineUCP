@@ -8,6 +8,7 @@
   --curtain-light: #b3121f;
   --gold: #e50914;
   --gold-dim: #a3050e;
+  --rojo-texto: #f63148;
   --on-accent: #ffffff;
   --text: #f5f5f5;
   --text-muted: #a3a3a3;
@@ -79,7 +80,7 @@ h3 { font-size: 1.5rem; }
 p { margin: 0 0 1em; color: var(--text); max-width: 68ch; }
 .muted { color: var(--text-muted); }
 
-a { color: var(--gold); text-decoration: none; }
+a { color: var(--rojo-texto); text-decoration: none; }
 a:hover { color: var(--text); }
 
 img, svg { display: block; max-width: 100%; }
@@ -116,7 +117,7 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text);
 }
 
-.nav__logo span { color: var(--gold); }
+.nav__logo span { color: var(--rojo-texto); }
 
 .nav__links {
   display: flex;
@@ -308,7 +309,7 @@ img, svg { display: block; max-width: 100%; }
 .card__price {
   margin-top: auto;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--rojo-texto);
   font-size: 1.05rem;
 }
 
@@ -694,7 +695,8 @@ a:focus-visible,
   background: currentColor;
 }
 
-.badge-cine--tipas { color: var(--zone-tipas); border-color: var(--zone-tipas); }
+.badge-cine--tipas { color: var(--rojo-texto); border-color: var(--zone-tipas); }
+.badge-cine--tipas::before { background: var(--zone-tipas); }
 .badge-cine--imax { color: var(--zone-imax); border-color: var(--zone-imax); }
 .badge-cine--sunstar { color: var(--zone-sunstar); border-color: var(--zone-sunstar); }
 
