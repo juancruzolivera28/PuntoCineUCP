@@ -208,6 +208,7 @@
       document.getElementById('ficha-elenco').textContent = pelicula.elenco;
       document.getElementById('ficha-idioma').textContent = pelicula.idioma;
       document.getElementById('ficha-cine').textContent = primera ? (primera.cine_nombre + ' — ' + primera.cine_direccion) : '';
+      document.getElementById('ficha-precio').textContent = primera ? (formatearPrecio(primera.precio) + ' por entrada') : '';
 
       var funcionesEl = document.getElementById('ficha-funciones');
       (pelicula.funciones || []).forEach(function (funcion) {
