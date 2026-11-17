@@ -621,12 +621,7 @@ a:focus-visible,
 }
 
 .nav__dropdown > summary::-webkit-details-marker { display: none; }
-
-.nav__dropdown > summary::after {
-  content: "▾";
-  font-size: 0.7em;
-  margin-left: 4px;
-}
+.nav__dropdown > summary::marker { content: ""; }
 
 .nav__dropdown[open] > summary,
 .nav__dropdown > summary:hover {
